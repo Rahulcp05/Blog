@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h2>Your Account has been Verified</h2>
+
+{% endblock %}
+
+
+<p>Click <a href="/accounts/login/">here</a> to login again</p>

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+    <form action="/create/" method="post">{% csrf_token %}
+    <ul>{{form.as_ul}}</ul>
+    <center><input type= 'submit' value='create'/></center>
+    </form>
+

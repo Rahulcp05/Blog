@@ -1,0 +1,5 @@
+
+    <form action="/create/" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <ul>{{form.as_ul}}</ul>
+    <center><input type= 'submit' value='create'/></center>
+    </form>

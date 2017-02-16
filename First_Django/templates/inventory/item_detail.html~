@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+	<a href="{% url 'index' %}">Back to item list</a>
+	<h3>{{ item.title|capfirst }}</h3>
+	<p>{{ item.amount }} currently in stock</p>
+	<h4>Description:</h4>
+	<p>{{ item.description }}</p>
+        <h2>Comment</h2>
+	{% for c in item.comment_set.all %}
+	<p>{{c.name}} : {{c.body}}</p>
+	{% endfor %}
+	{% if user.is_authenticated %}
+		<p><a href="/items/add_comment/{{item.id}}/">Add Comment</a></p>
+		<h6>           click <a href="/accounts/logout/">here</a> to logout</h6>
+	{% else %}
+		<p>please login</p>
+	{% endif %}
+{% endblock %}

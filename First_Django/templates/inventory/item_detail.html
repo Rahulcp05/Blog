@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content%}
+{#    {% load crispy_forms_tags %}#}
+	<a href="{% url 'index' %}">Back to Blog list</a>
+    <div class='col-sm-6 col-sm-offset-3'>
+	<h3>{{ item.title|capfirst }}</h3>
+    {% if item.author %}
+    <h5>author:{{ item.author }}</h5>
+    {%endif %}
+    <h4><small>{{ item.created }}</small></h4>
+    {%if item.image %}
+    <img src="{{ item.image.url }}" class="img-responsive" />
+    {% endif %}
+
+  <div class='row'>
+<div class='col-sm-12'>
+
+{{ item.content|linebreaks }}
+
+    <br/>
+
+     <h4>Comment</h4>
+    {% if user.is_authenticated %}
+<form action="" method="post">{% csrf_token %}
+<ul>
+{#{% crispy form %}#}
+{{ form }}
+</ul>
+        <input type="submit" name="submit" value="Post Comment">
+    {% endif %}
+
+</form>
+</br>
+	{% for c in item.comment_set.all %}
+	<p>{{c.name}} : {{c.body}}</p>
+	{% endfor %}
+	{% if user.is_authenticated %}
+		<h6>click <a href="/accounts/logout/">here</a> to logout</h6>
+	{% else %}
+		<p>Please login to commment</p>
+	{% endif %}
+{% endblock %}
+</div>
+</div>
+</div>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Inventory Project</title>
+		<meta name="description" content="">
+		<style type="text/css">
+    body {
+         text-align=Center;
+     }
+     #page{
+          width: 960px;
+          text-align: left;
+          margin:15px auto 20px auto;
+          background-color:#0c0c0c
+     }
+     #content {
+         float: left;
+         width: 300px;
+         border: 1px solid #f00;
+         padding: 10px;
+     }
+     #new{
+         float: right;
+         width: 600px;
+         border: 1px solid #000;
+	 padding: 10px;
+     }
+     ul{
+	padding: 10px;
+	}
+  </style>
+	</head>
+	<body>
+		<div id="page">
+		<div id="content">
+		{% block content %}
+		{% endblock content %}
+                </div>
+                <div id="new">
+		{% block new %}
+		{% endblock new %}
+                </div>
+                </div>
+	</body>
+</html>

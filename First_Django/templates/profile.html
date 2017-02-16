@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	<h2>Profile</h2>
+	<p>Username: {{ name }}</p>
+	<p>email: {{ email }}</p>
+	<p>first name: {{ firstname }}</p>
+	<p>last name: {{ lastname }}</p>
+	<h>Click <a href="/edit_profile/">here</a> to edit your profile</h>
+	<p> click <a href="/">here</a> to go to the index page</p>
+{% endblock %}

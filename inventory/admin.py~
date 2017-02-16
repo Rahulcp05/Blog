@@ -1,0 +1,6 @@
+from django.contrib import admin
+
+from .models import Item,Comment
+class ItemAdmin(admin.ModelAdmin):
+	list_display=['title','amount']
+admin.site.register(Item,ItemAdmin)

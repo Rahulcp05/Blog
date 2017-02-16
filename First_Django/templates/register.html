@@ -1,0 +1,18 @@
+ {% extends "base.html" %}
+
+{% block content %}
+
+	<h2>Register</h2>
+    <div style="text-align: center">
+	<form action = "/accounts/register/" method="post" >{% csrf_token %}
+	{{form.as_ul}}
+
+  local     <center><div style="margin:0 auto; margin-top: 175px; margin-bottom: 125px" class="g-recaptcha" data-sitekey="6LebFRUUAAAAAL0aXYI1oam8mZZfMLNuAR9staS6"></div></center>
+        <center><input type='submit' value='register'/></center>
+	</form>
+    </div>
+
+{# google  <center><div style="margin:0 auto; margin-top: 175px; margin-bottom: 125px" class="g-recaptcha" data-sitekey="6LcfqBUUAAAAAFmlAWwRChE7-qyhFHkHue31DgP0"></div></center>#}
+{#        <center><input type='submit' value='register'/></center>#}
+{#	</form>#}
+{% endblock %}

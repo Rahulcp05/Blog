@@ -1,0 +1,21 @@
+from django.conf.urls import include, url
+from django.contrib import admin
+from inventory import views
+from registration import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^item/(?P<id>\d+)/', views.item_detail, name="item_detail"),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/$', views.login),
+    url(r'^accounts/auth/$', views.auth_view),
+    url(r'^accounts/logout/$', views.logout),
+    url(r'^accounts/loggedin/$', views.loggedin),
+    url(r'^accounts/invalid/$', views.invalid_login),
+    url(r'^accounts/register/$', views.register_user),
+    url(r'^accounts/register_success/$', views.register_success),
+    url(r'^items/add_comment/(?P<id>\d+)/$', views.add_comment),
+    url(r'^profile/$', views.profile),
+    url(r'^edit_profile/$', views.edit_profile),
+    url(r'^create/$', views.create),
+]
